@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <app-header [pageTitle]="pageTitle"></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <img src="./assets/currency-converter.png" id="currency-converter" alt="">
+      </ion-col>
+    </ion-row>
+
+  <!-- #region Value Inputs -->
+  <ion-row>
+    <ion-card>
+      <ion-col>
+        USD a CLP
+        <ion-input type="number" [(ngModel)]="usd" class="value-input" placeholder="USD a CLP"></ion-input>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col>
+        EUR a CLP
+        <ion-input type="number" [(ngModel)]="eur" class="value-input" placeholder="EUR a CLP"></ion-input>
+      </ion-col>
+    </ion-card>
+  </ion-row>
+  <!-- #endregion -->
+
+  <ion-card *ngIf="Divisa">
+    <ion-row>
+      <ion-col>
+        <strong><p class="ion-text-center">Resultado</p></strong>
+        <p>USD a CLP: $<strong>{{Divisa.dolar.valor*usd}}</strong></p>
+        <p>EUR a CLP: $<strong>{{Divisa.euro.valor*eur}}</strong></p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngIf="Divisa">
+    <ion-row>
+      <ion-col>
+        <p>Valor actual del Dolar: $<strong>{{Divisa.dolar.valor}}</strong></p>
+        <p>Valor actual del Euro: $<strong>{{Divisa.euro.valor}}</strong></p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

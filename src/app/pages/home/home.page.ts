@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  pageTitle = 'Home'; //Creamos la variable para llamarla del html y muestre el titulo
+
   constructor() {}
 
 }
