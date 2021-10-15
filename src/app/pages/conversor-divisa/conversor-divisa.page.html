@@ -20,19 +20,33 @@
   <ion-row>
     <ion-card>
       <ion-col>
-        USD a CLP
-        <ion-input type="number" [(ngModel)]="usd" class="value-input" placeholder="USD a CLP"></ion-input>
+        De USD
+        <ion-input type="number" [(ngModel)]="fromValue" class="value-input" placeholder="De USD" (keyup)="calculateCurrencyOne()"></ion-input>
       </ion-col>
     </ion-card>
     <ion-card>
       <ion-col>
-        EUR a CLP
-        <ion-input type="number" [(ngModel)]="eur" class="value-input" placeholder="EUR a CLP"></ion-input>
+        A CLP
+        <ion-input type="number" [(ngModel)]="toValue" class="value-input" placeholder="A CLP" (keyup)="calculateCurrencyTwo()"></ion-input>
+      </ion-col>
+    </ion-card>
+  </ion-row>
+  <ion-row>
+    <ion-card>
+      <ion-col>
+        De EUR
+        <ion-input type="number" [(ngModel)]="fromValue2" class="value-input" placeholder="De EUR" (keyup)="calculateCurrencyThree()"></ion-input>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col>
+        A CLP
+        <ion-input type="number" [(ngModel)]="toValue2" class="value-input" placeholder="A CLP" (keyup)="calculateCurrencyFour()"></ion-input>
       </ion-col>
     </ion-card>
   </ion-row>
   <!-- #endregion -->
-
+  <!--
   <ion-card *ngIf="Divisa">
     <ion-row>
       <ion-col>
@@ -41,7 +55,7 @@
         <p>EUR a CLP: $<strong>{{Divisa.euro.valor*eur}}</strong></p>
       </ion-col>
     </ion-row>
-  </ion-card>
+  </ion-card> -->
 
   <ion-card *ngIf="Divisa">
     <ion-row>
