@@ -28,9 +28,21 @@ const routes: Routes = [
     loadChildren: () => import('./pages/conversor-divisa/conversor-divisa.module').then( m => m.ConversorDivisaPageModule)
   },
   {
+    path: 'musicos',
+    loadChildren: () => import('./pages/musicos/musicos.module').then( m => m.MusicosPageModule)
+  },
+  {
+    path: 'detalle-musico',
+    redirectTo: 'home'
+  },
+  {
+    path: 'detalle-musico/:id',
+    loadChildren: () => import('./pages/detalle-musico/detalle-musico.module').then( m => m.DetalleMusicoPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'home'
-  }
+  },
 ];
 
 @NgModule({

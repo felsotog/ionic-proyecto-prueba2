@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mantenedor Musicos CRUD SQLite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="apellido" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Rut</ion-label>
+        <ion-input formControlName="rut" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input formControlName="edad" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input formControlName="direccion" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input formControlName="telefono" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Grado Academico</ion-label>
+        <ion-input formControlName="gradoAcademico" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Instrumento</ion-label>
+        <ion-input formControlName="instrumento" type="text" required></ion-input>
+      </ion-item>  
+      <ion-item>
+        <ion-label position="floating">Fotografia</ion-label>
+        <ion-input formControlName="fotografia" type="text" required></ion-input>
+      </ion-item> 
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Registrar Musico
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <h4>Musicos</h4>
+    </ion-list-header>
+
+    <ion-item lines="inset" *ngFor="let musico of Data">
+      <ion-label>
+        <ion-avatar slot="start">
+          <img src="{{ musico.fotografia }}" alt="">
+        </ion-avatar>
+        <h5>{{ musico.nombre }} {{ musico.apellido }}</h5>
+        <p>{{ musico.rut }}</p>
+        <p>Edad: {{ musico.edad }}</p>
+        <p>{{ musico.direccion }}</p>
+        <p>{{ musico.telefono }}</p>
+        <p>{{ musico.email }}</p>
+        <p>Estudios: {{ musico.gradoAcademico }}</p>
+        <p>Instrumento: {{ musico.instrumento }}</p>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <ion-icon name="create" style="zoom: 2.0;" [routerLink]="['/detalle-musico/',musico.id]"></ion-icon>
+        <ion-icon name="trash" style="zoom: 2.0;" (click)="deleteMusico(musico.id)"></ion-icon>
+      </div>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

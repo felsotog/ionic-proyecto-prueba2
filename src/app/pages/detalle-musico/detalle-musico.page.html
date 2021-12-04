@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar Musico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="editForm" (ngSubmit)="updateMusico()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="apellido" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Rut</ion-label>
+        <ion-input formControlName="rut" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input formControlName="edad" type="number" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input formControlName="direccion" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input formControlName="telefono" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Grado Academico</ion-label>
+        <ion-input formControlName="gradoAcademico" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Instrumento</ion-label>
+        <ion-input formControlName="instrumento" type="text" required></ion-input>
+      </ion-item>  
+      <ion-item>
+        <ion-label position="floating">Fotografia</ion-label>
+        <ion-input formControlName="fotografia" type="text" required></ion-input>
+      </ion-item> 
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Modificar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
